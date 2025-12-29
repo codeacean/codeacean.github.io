@@ -1,0 +1,42 @@
+baseURL = 'https://www.codeacean.github.io'
+languageCode = 'en-us'
+title = "Codeacean"
+theme = "paper"
+
+[params]
+  name = "Codeacean"
+  bio = "Programmar"
+
+  # color style
+  color = 'linen'                           # linen, wheat, gray, light
+
+  # header social icons
+  twitter = 'codeacean'
+  github = 'codeacean'
+  bluesky = ''
+
+  # misc
+  disableHLJS = true                        # disable highlight.js
+  disablePostNavigation = true              # disable post navigation
+  monoDarkIcon = true                       # show monochrome dark mode icon
+  math = true                               # enable KaTeX math typesetting globally
+  localKatex = false                        # use local KaTeX js/css instead of CDN
+  graphCommentId = "YOUR_GRAPH_COMMENT_ID"  # use graph comment (disqus alternative)
+  favicon = "favicon.ico"                   # customize the default favicon
+  appleTouchIcon = "apple-touch-icon.png"   # customize the default Apple touch icon
+
+# Menu links
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 2
+
+[[menu.main]]
+  name = "Blog"
+  url = "/blog/"
+  weight = 3
