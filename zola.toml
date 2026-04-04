@@ -1,0 +1,54 @@
+base_url = "https://voidwalter.github.com"
+title = "Walter"
+description = "Walter's blog page"
+default_language = "en"
+theme = "serene"
+output_dir = "public"
+compile_sass = true
+minify_html = false # Keep this false, as it may cause issues with some styles
+build_search_index = false
+generate_feeds = false
+feed_filenames = ["feed.xml"]
+taxonomies = [{ name = "tags" }, { name = "categories" }]
+
+[markdown]
+render_emoji = false
+external_links_target_blank = false
+external_links_no_follow = true
+external_links_no_referrer = true
+smart_punctuation = false
+github_alerts = true
+
+[markdown.highlighting]
+style = "class"
+light_theme = "github-light"
+dark_theme = "github-dark"
+
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
+
+#=========================================================================================
+
+[extra]
+
+sections = [
+  { name = "posts", path = "/posts", is_external = false },
+  # { name = "tags", path = "/tags", is_external = false },
+  # { name = "github", path = "https://github.com/voidwalter", is_external = true },
+]
+blog_section_path = "/posts"
+
+back_link_text = "Back" # Text of the back button
+force_theme = false
+
+footer_copyright = "© 2026 Walter"
+footer_credits = false
+
+not_found_error_text = "this derivation does not exist"
+not_found_recover_text = "« back to home »"
+
+reaction = false # Whether to enable anonymous emoji reactions (Note: You need to set up a working api endpoint to enable this feature)
+reaction_align = "right" # "left" | "center" | "right"
+reaction_endpoint = "https://example.com/api/reaction"
