@@ -3,14 +3,23 @@
 {% endif %}
 <footer>
   <div class="left">
-    <div class="copyright">
-      {{ config.extra.footer_copyright }}
-      {% if config.extra.footer_credits %}
-      <span>|</span>
-      Built with <a href="https://www.getzola.org" rel="noreferrer" target="_blank">zola</a> and <a href="https://github.com/isunjn/serene" rel="noreferrer" target="_blank">serene</a>
-      {% endif %}
-    </div>
+    <!-- <div class="copyright"> -->
+    <!--   {{ config.extra.footer_copyright }} -->
+    <!--   {% if config.extra.footer_credits %} -->
+    <!--   <span>|</span> -->
+    <!--   Built with <a href="https://www.getzola.org" rel="noreferrer" target="_blank">zola</a> and <a href="https://github.com/isunjn/serene" rel="noreferrer" target="_blank">serene</a> -->
+    <!--   {% endif %} -->
+    <!-- </div> -->
+
+    <div>  </div>
+    <div style="display: flex; gap: 8px; align-items: center; margin-top: 0rem; font-size: 0.90rem;">
+      <a href="https://nixwebr.ing/prev/voidwalter" style="font-size: 1.4rem; line-height: 1; padding: 4px 4px;">&#8592;</a>
+      <a href="https://nixwebr.ing" style="font-size: 0.85rem;">nix webring</a>
+      <a href="https://nixwebr.ing/next/voidwalter" style="font-size: 1.4rem; line-height: 1; padding: 4px 4px;">&#8594;</a>
+      <a href="https://nixwebr.ing/rand" style="font-size: 1.4rem; line-height: 1; padding: 4px 4px;">&#9852;</a>    </div>
   </div>
+
+  
 
   <div class="right">
     {% if blog_section_path is defined and section.path is starting_with(blog_section_path) %}
