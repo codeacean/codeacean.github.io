@@ -20,4 +20,5 @@ links = [
 ]
 +++
 
-Hi, I'm Walter.
+**Hi, I'm Walter (17). Homo sapiens with XY chromosomes.** </br>
+Learning Math and Programming. I really love C++.
