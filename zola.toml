@@ -35,6 +35,7 @@ anchors = "on"
 
 sections = [
   { name = "posts", path = "/posts", is_external = false },
+  { name = "about", path = "/about", is_external = false },
   # { name = "tags", path = "/tags", is_external = false },
   # { name = "github", path = "https://github.com/voidwalter", is_external = true },
 ]
