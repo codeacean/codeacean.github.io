@@ -1,3 +1,7 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&display=swap" rel="stylesheet">
+
 <style>
 
   /* light mode colors */
@@ -5,8 +9,8 @@
     --primary-color: #5871a2;
     --primary-pale-color: #5871a233;
     --primary-decoration-color: #5871a210;
-    --bg-color: #00695c;
-    --text-color: #3f9f8f;
+    --bg-color: #e2c3a4;
+    --text-color: #000000;
     --text-pale-color: #767676;
     --text-decoration-color: #a9a9a9;
     --highlight-mark-color: #5f75b020;
@@ -43,10 +47,10 @@
     --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
     --homepage-max-width: 768px;
     --main-max-width: 768px;
-    --avatar-size: 60px;
+    --avatar-size: 75px;
     --font-size: 16px;
     --line-height: 1.75;
-    --img-border-radius: 0px;
+    --img-border-radius: 7px;
     --detail-border-radius: 0px;
     --dark-mode-img-brightness: 0.75;
     --dark-mode-chart-brightness: 0.75;
@@ -57,4 +61,60 @@
     --detail-border-color: var(--primary-color);
   }
 
+#name {
+  font-size: 33px;
+  font-family: 'Fira Code', monospace;
+  font-weight: 700;
+  display: inline-flex;
+}
+
+#name span {
+  display: inline-block;
+  animation: wave 1.6s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  40%       { transform: translateY(-8px); }
+  60%       { transform: translateY(-4px); }
+}
+
+#links a.title,
+#links .left a:first-child {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-decoration: none;
+    color: var(--text-color);
+  }
+
+#left a {
+    text-decoration: none;
+    font-family: 'Fira Code', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: background 0.15s;
+  }
+
+#links a:hover {
+    background: var(--primary-decoration-color);
+    text-decoration: none;
+}
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const el = document.getElementById("name");
+    const text = el.textContent;
+    el.textContent = "";
+    text.split("").forEach((ch, i) => {
+      const s = document.createElement("span");
+      s.textContent = ch === " " ? "\u00a0" : ch;
+      s.style.animationDelay = (i * 0.08) + "s";
+      el.appendChild(s);
+    });
+  });
+</script>
