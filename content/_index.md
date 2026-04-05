@@ -18,5 +18,8 @@ links = [
 ]
 +++
 
-**Hi, I'm Walter (17). Homo sapiens with XY chromosomes.** </br>
-Learning Math and Programming. I really love C++.
+**Hi, I'm Walter. {{ live_age(birth_date="2008-07-09") }} years old, Homo sapiens with XY chromosomes.** </br>
+Learning Math and Programming. I Love C++.
+
+
+## Recent Posts:

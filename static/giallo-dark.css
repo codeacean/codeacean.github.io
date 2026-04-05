@@ -15,6 +15,33 @@
   color: #444D56;
 }
 
+#toc {
+  ul {
+    list-style: none;
+    padding: 1;
+    margin: 0;
+  }
+
+  li {
+    margin: 0.2rem 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: your-color-here;
+
+    &:hover {
+      color: your-accent-color-here;
+    }
+  }
+
+  // h3 links are nested, indent them
+  a.h3 {
+    padding-left: 1rem;
+    font-size: 0.85em;
+    opacity: 0.1;
+  }
+}
 .z-comment { color: #6A737D; }
 .z-constant { color: #79B8FF; }
 .z-entity { color: #B392F0; }
@@ -22,7 +49,7 @@
 .z-storage { color: #F97583; }
 .z-string { color: #9ECBFF; }
 .z-support { color: #79B8FF; }
-.z-variable { color: #FFAB70; }
+.z-variable { color: #0FAB70; }
 .z-carriage-return { color: #24292E; background-color: #F97583; font-style: italic;text-decoration: underline; }
 .z-variable { color: #79B8FF; }
 .z-source { color: #9ECBFF; }

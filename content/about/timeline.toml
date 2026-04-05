@@ -1,0 +1,20 @@
+[[collection]]
+type = "timeline"
+date = "Sep 2025 - Present"
+title = "GDGoC Organizer"
+subtitle = "GDGoC Organizer @ SCET"
+
+[[collection]]
+type = "timeline"
+date = "Sep 2024 - Sep 2025"
+title = "GDG Tech Lead"
+subtitle = "GDG Tech Lead @ SCET"
+description = "Mentored and guided members in learning and implementing new technologies..."
+
+[[collection]]
+type = "timeline"
+date = "Nov 2024"
+title = "Tripcrops"
+subtitle = "Full Stack Web Developer"
+description = "Developed a user authentication system..."
+link = "https://tripcrops.com"
