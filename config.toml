@@ -35,22 +35,20 @@ anchors = "on"
 
 sections = [
   { name = "posts", path = "/posts", is_external = false },
+  # { name = "notes", path = "/notes", is_external = false },
   { name = "bookmark", path = "/bookmark", is_external = false},
-  { name = "normie stuff", path = "/normie", is_external = false},
+  { name = "lists", path = "/normie", is_external = false},
   { name = "about", path = "/about", is_external = false },
   # { name = "tags", path = "/tags", is_external = false },
-  # { name = "github", path = "https://github.com/voidwalter", is_external = true },
 ]
-blog_section_path = "/posts"
 
+blog_section_path = "/posts"
 back_link_text = "Back" # Text of the back button
 force_theme = false
-
 footer_copyright = "© 2026 Walter"
 footer_credits = false
-
 not_found_error_text = "this derivation does not exist"
-not_found_recover_text = "« back to home »"
+not_found_recover_text = "« rollback »"
 
 reaction = false # Whether to enable anonymous emoji reactions (Note: You need to set up a working api endpoint to enable this feature)
 reaction_align = "right" # "left" | "center" | "right"

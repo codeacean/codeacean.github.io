@@ -3,11 +3,9 @@ title = "Normie"
 template = "prose.html"
 
 [extra]
-title = "Normie Stuff(s)"
-subtitle = "Most normie stuff i could share..."
+title = "My Personal Lists"
+subtitle = "A curated collection of things I explore, learn, and enjoy."
 +++
 
 
-## Top Movie (for me)
-{{ collection(file="normie.toml") }}
-
+A list of Anime and Movies I've watched, — with my bad takes: **[List](./listsofan/)**

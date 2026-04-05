@@ -6,15 +6,15 @@ link = "https://brennan.io/2026/01/23/claude-code/"
 
 [[collection]]
 type = "entry"
-title = "Science of The Gaps"
-subtitle = "Luke Smith"
-link = "https://lukesmith.xyz/articles/science-of-the-gaps/"
-
-[[collection]]
-type = "entry"
 title = "I am Not Convinced by Vibe Coding"
 subtitle = "notashelf"
 link = "https://notashelf.dev/posts/vibe-coding"
+
+[[collection]]
+type = "entry"
+title = "How to work full-time without a salary, aka do FOSS."
+subtitle = "vaxry"
+link = "https://blog.vaxry.net/articles/2023-workingFullTime"
 
 [[collection]]
 type = "entry"
@@ -27,3 +27,9 @@ type = "entry"
 title = "Write Code Every Day"
 subtitle = "John Resig"
 link = "https://johnresig.com/blog/write-code-every-day/"
+
+[[collection]]
+type = "entry"
+title = "Science of The Gaps"
+subtitle = "Luke Smith"
+link = "https://lukesmith.xyz/articles/science-of-the-gaps/"

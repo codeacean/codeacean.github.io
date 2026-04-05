@@ -4,9 +4,9 @@ template = "prose.html"
 
 [extra]
 title = "Bookmarks"
-subtitle = "Some cool stuff you should know (so am I)"
+subtitle = "Some cool stuff"
 +++
 
 
-## Blog
+# Blog
 {{ collection(file="bookmark.toml") }}

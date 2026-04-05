@@ -10,8 +10,6 @@ recent_more_text = "more »"
 date_format = "%b %-d, %Y"
 
 name = "Walter"
-# id = "voidwalter"
-# bio = "dog person, killer"
 avatar = "img/avatar.png"
 links = [
     { name = "GitHub", icon = "github", url = "https://github.com/voidwalter" },

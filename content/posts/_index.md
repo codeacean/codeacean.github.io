@@ -10,8 +10,8 @@ generate_feeds = true
 [extra]
 lang = "en"
 
-title = "Posts"
-subtitle = "I write about ...."
+title = "Blog Posts"
+subtitle = "Opinions, Thoughts, Experiences, Documents"
 
 date_format = "%b %-d, %Y"
 
