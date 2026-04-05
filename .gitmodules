@@ -2,3 +2,7 @@
 	path = themes/serene
 	url = https://github.com/isunjn/serene.git
 	branch = latest
+[submodule "themes/zerene"]
+	path = themes/zerene
+	url = https://github.com/voidwalter/zerene.git
+	branch = main
