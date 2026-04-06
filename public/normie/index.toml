@@ -1,0 +1,19 @@
+[[collection]]
+type = "card_simple"
+title = "List"
+link = "./listsofan/"
+content = "A list of Anime and Movies I've watched, — with my bad takes"
+
+# [[collection]]
+# type = "card_simple"
+# title = "Kubernetes"
+# link = "https://example.com"
+# content = "Production-Grade Container Scheduling and Management"
+# date = "2024"
+#
+# [[collection]]
+# type = "card_simple"
+# title = "Next.js"
+# link = "https://example.com"
+# content = "React framework for building full-stack web applications"
+# date = "2022"
