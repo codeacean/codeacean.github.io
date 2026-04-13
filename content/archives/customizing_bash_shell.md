@@ -7,7 +7,7 @@ draft = false
 
 [taxonomies]
 categories = ["programming"]
-tags = ["bash"]
+tags = ["linux", "bash"]
 
 [extra]
 lang = "en"

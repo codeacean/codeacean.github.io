@@ -1,6 +1,6 @@
 +++
-title = "My Blog"
-description = "My blog site."
+title = "Archives | Voidwalter"
+description = "Archives, blogs"
 sort_by = "date"
 template = "blog.html"
 page_template = "post.html"
@@ -10,7 +10,7 @@ generate_feeds = true
 [extra]
 lang = "en"
 
-title = "Blog Posts"
+title = "Archives"
 subtitle = "Opinions, Thoughts, Experiences, Documents"
 
 date_format = "%b %-d, %Y"

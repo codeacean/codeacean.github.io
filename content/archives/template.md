@@ -1,11 +1,11 @@
 +++
-title = "A Complete Starter Guide to C++"
-date = 2026-04-03
+title = "X"
+date = 2026-04-04
 draft = true
 
 [taxonomies]
-categories = ["programming"]
-tags = ["bash"]
+categories = ["ada"]
+tags = ["tag"]
 
 [extra]
 lang = "en"
@@ -18,4 +18,4 @@ featured = false
 reaction = false
 +++
 
-
+# Template

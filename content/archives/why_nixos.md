@@ -1,11 +1,11 @@
 +++
 title = "What! Why Do You Use NixOS?"
-date = 2026-04-03
+date = 2026-03-27
 draft = false
 
 [taxonomies]
-categories = ["programming, linux"]
-tags = ["nixos"]
+categories = [ "linux"]
+tags = ["linux", "nixos"]
 
 [extra]
 lang = "en"
