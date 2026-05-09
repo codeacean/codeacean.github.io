@@ -4,13 +4,9 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    zerene = {
-      url = "github:voidwalter/zerene";
-      flake = false;
-    };
   };
 
-  outputs = { self, nixpkgs, flake-utils, zerene }:
+  outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
@@ -19,8 +15,6 @@
           buildInputs = [ pkgs.zola ];
           shellHook = ''
             echo "Zola $(zola --version) ready"
-            echo "  zola serve   — local dev server"
-            echo "  zola build   — build to ./public"
           '';
         };
 
@@ -29,8 +23,7 @@
           src = ./.;
           nativeBuildInputs = [ pkgs.zola ];
           preBuild = ''
-            mkdir -p themes/zerene
-            cp -rT ${zerene} themes/zerene
+            # mkdir -p themes/zerene
           '';
           buildPhase = "zola build";
           installPhase = "cp -r public $out";
@@ -39,8 +32,8 @@
         apps.default = {
           type = "app";
           program = "${pkgs.writeShellScript "serve" ''
-            mkdir -p themes/zerene
-            cp -rT ${zerene} themes/zerene
+            # mkdir -p themes/zerene
+            # git clone https://github.com/voidwalter/zerene.git ./themes/zerene/
             ${pkgs.zola}/bin/zola serve
           ''}";
         };

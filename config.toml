@@ -44,7 +44,7 @@ sections = [
 
 blog_section_path = "/archives"
 back_link_text = "Back" # Text of the back button
-force_theme = false
+force_theme = "dark"
 footer_copyright = "© 2026 Walter"
 footer_credits = false
 not_found_error_text = "this derivation does not exist"

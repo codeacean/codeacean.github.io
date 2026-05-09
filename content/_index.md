@@ -4,10 +4,6 @@ template = 'home.html'
 [extra]
 lang = 'en'
 footer = true
-recent = true
-recent_max = 15
-recent_more_text = "more »"
-date_format = "%b %-d, %Y"
 
 name = "Walter"
 avatar = "img/avatar.png"
@@ -20,6 +16,3 @@ links = [
 
 **Hi, I'm Walter. {{ live_age(birth_date="2008-07-09") }} years old, Homo sapiens with XY chromosomes.** </br>
 Currently studying Math and Programming.
-
-
-## Recent Posts:
