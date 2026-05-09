@@ -34,7 +34,7 @@ anchors = "on"
 [extra]
 
 sections = [
-  { name = "archives", path = "/archives", is_external = false },
+  { name = "blog", path = "/blogs", is_external = false },
   # { name = "notes", path = "/notes", is_external = false },
   { name = "bookmark", path = "/bookmark", is_external = false},
   { name = "lists", path = "/normie", is_external = false},
@@ -42,7 +42,7 @@ sections = [
   # { name = "tags", path = "/tags", is_external = false },
 ]
 
-blog_section_path = "/archives"
+blog_section_path = "/blogs"
 back_link_text = "Back" # Text of the back button
 force_theme = "dark"
 footer_copyright = "© 2026 Walter"

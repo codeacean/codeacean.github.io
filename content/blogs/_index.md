@@ -1,6 +1,6 @@
 +++
-title = "Archives | Voidwalter"
-description = "Archives, blogs"
+title = "Blog"
+description = "walter's blog"
 sort_by = "date"
 template = "blog.html"
 page_template = "post.html"
@@ -10,13 +10,12 @@ generate_feeds = true
 [extra]
 lang = "en"
 
-title = "Archives"
-subtitle = "Opinions, Thoughts, Experiences, Documents"
-
-date_format = "%b %-d, %Y"
+title = "Blog"
+subtitle = "Opinions, Thoughts, Experiences"
+date_format = "%B %-d, %Y"
 
 categorized = false # posts can be categorized
-back_to_top = true # show back-to-top button
+back_to_top = false # show back-to-top button
 toc = true # show table-of-contents
 comment = false # enable comment
 copy = true # show copy button in code block
