@@ -14,8 +14,8 @@ comment = false
 reaction = false
 +++
 
-I go by @voidwalter on most platforms. Though, That's not my real name.
-I’m 17, studying in college in Science.. I'm passionate about many open-source projects, and system administration.
+I go by @elyrisai on most platforms.
+I’m 18, I'm passionate about many open-source projects, and system administration.
 I love using open-source software, and I really want to contribute to many open-source projects.
 
 Currently Focusing on Programming ( C++ to be exact) and Math. Also, Busy for Academic Study.
@@ -23,7 +23,7 @@ and, Also spending a lot of time with NixOS (figuring things out that i don't un
 
 I’m Interested in:
   - Low-Level Programming
-  - FOSS, Linux (specifically, NixOS), Security and Privacy
+  - FOSS, Linux, Security and Privacy
 
 
 ## what this site is
@@ -43,6 +43,6 @@ if something here was useful to you, that's enough. *else? sorry.*
     <td><a href="https://zen-browser.app"> <img src="/badges/firefox.gif"></a></td>
     <td><a href="https://linux.org"><img src="/badges/linux.webp"></a></td>
     <td><a href="https://nixos.org"><img src="/badges/nixos.webp"></a></td>
-    <td><a href="https://voidwalter.github.io"> <img src="/badges/sucks.gif"></a></td>
+    <td><a href="https://elyrisai.xyz/"> <img src="/badges/sucks.gif"></a></td>
   </tr>
 </table>
