@@ -1,8 +1,4 @@
-[submodule "themes/themes/zerene"]
+[submodule "themes/zerene"]
 	path = themes/themes/zerene
 	url = https://github.com/elyrisai/zerene.git
-	branch = main
-[submodule "themes/zerene"]
-	path = themes/zerene
-	url = https://github.com/elyrasai/zerene.git
 	branch = main
