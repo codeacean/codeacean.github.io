@@ -1,7 +1,7 @@
 +++
 title = "What! Why Do You Use NixOS?"
 date = 2026-03-27
-draft = false
+draft = true
 
 [taxonomies]
 categories = [ "linux"]

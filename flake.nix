@@ -1,5 +1,5 @@
 {
-  description = "walter's website";
+  description = "elyrisai's website";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -19,7 +19,7 @@
         };
 
         packages.default = pkgs.stdenv.mkDerivation {
-          name = "walter-site";
+          name = "site";
           src = ./.;
           nativeBuildInputs = [ pkgs.zola ];
           preBuild = ''
@@ -33,7 +33,7 @@
           type = "app";
           program = "${pkgs.writeShellScript "serve" ''
             # mkdir -p themes/zerene
-            # git clone https://github.com/voidwalter/zerene.git ./themes/zerene/
+            git clone https://github.com/elyrisai/zerene.git ./themes/zerene/
             ${pkgs.zola}/bin/zola serve
           ''}";
         };
