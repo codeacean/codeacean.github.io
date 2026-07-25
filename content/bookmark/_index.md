@@ -4,9 +4,11 @@ template = "prose.html"
 
 [extra]
 title = "Bookmarks"
-subtitle = "Some cool stuff"
+subtitle = ""
 +++
 
-
-# Blog
+----
+## Blog
 {{ collection(file="bookmark.toml") }}
+____
+
