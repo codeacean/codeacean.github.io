@@ -1,6 +1,5 @@
 +++
-title = "Blog"
-description = "walter's blog"
+title = "Blog | Elyrisai"
 sort_by = "date"
 template = "blog.html"
 page_template = "post.html"

@@ -6,19 +6,13 @@ draft = false
 
 [taxonomies]
 categories = ["normie"]
-# tags = [""]
+tags = ["randomshit"]
 
 [extra]
 lang = "en"
-toc = true
+toc = false
 comment = false
 copy = true
-outdate_alert = true
-outdate_alert_days = 120
-math = false
-mermaid = false
-featured = false
-reaction = false
 +++
 
 > Hello World. *(October 28, 2025)*
