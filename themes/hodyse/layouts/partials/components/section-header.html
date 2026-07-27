@@ -1,0 +1,12 @@
+{{/* props: Title, Url, Small (bool) */}} {{- $title := .Title | default
+"Section" -}} {{- $url := .Url -}} {{- $small := .Small | default false -}}
+
+<div class="flex items-baseline justify-between gap-2">
+  <h2 class="heading-section">{{ $title }}</h2>
+
+  {{ with $url }}
+  <a href="{{ . | relURL }}" class="link-underline text-[0.72rem] text-muted">
+    {{ if $small }}All{{ else }}View all{{ end }}
+  </a>
+  {{ end }}
+</div>

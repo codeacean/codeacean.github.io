@@ -1,0 +1,203 @@
+/* ==========================================================================
+   LAYOUT & NAVIGATION
+   Page layouts, headers, footers, navigation links
+   ========================================================================== */
+
+  .layout-page {
+    @apply mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:py-12;
+  }
+
+  .layout-page-tight {
+    @apply mx-auto max-w-6xl px-4 py-4 sm:px-6 lg:py-10;
+  }
+
+  .section-stack {
+    @apply space-y-10;
+  }
+
+  .section-stack--home > * + * {
+    margin-top: 1.75rem;
+  }
+
+  .section-stack > div + div.posts-section {
+    border-top: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+    padding-top: 1.5rem;
+  }
+
+  /* Headings */
+  .heading-page {
+    @apply text-3xl font-semibold tracking-tight sm:text-4xl;
+  }
+
+  .heading-section {
+    @apply text-sm font-semibold tracking-tight;
+  }
+
+  .eyebrow {
+    @apply text-[0.65rem] uppercase tracking-[0.22em];
+  }
+
+  /* Cards */
+  .card {
+    @apply border border-border bg-surface rounded-xl shadow-sm;
+  }
+
+  .card-pad {
+    @apply p-4 sm:p-5;
+  }
+
+  .card-hover {
+    @apply transition-transform transition-shadow duration-150 ease-out;
+  }
+
+  .card-hover:hover {
+    @apply shadow-lg;
+    transform: translateY(-1px);
+    border-color: var(--color-accent);
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center rounded-full bg-accent px-4 py-2 text-xs font-medium text-white shadow-sm transition-transform duration-150 ease-out;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center text-xs font-medium text-muted;
+  }
+
+  .nav-shell {
+    @apply rounded-full border border-border shadow-md backdrop-blur p-3;
+    background-color: color-mix(in srgb, var(--color-surface) 82%, transparent);
+  }
+
+  .nav-shell::before {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--color-accent) 80%, transparent),
+      transparent
+    );
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  .nav-inner {
+    @apply flex items-center justify-between px-4 py-2 sm:px-5 sm:py-2.5;
+  }
+
+  /* Brand logo badge (fallback) */
+  .logo-badge {
+    @apply flex h-8 w-8 items-center justify-center rounded-full bg-accent text-[0.65rem] font-semibold text-white;
+  }
+
+  /* Nav links */
+  .nav-link {
+    @apply text-[0.78rem] font-medium text-muted;
+  }
+
+  .nav-link:hover {
+    color: var(--color-accent);
+  }
+
+  /* Theme toggle */
+  .theme-toggle {
+    @apply inline-flex h-8 w-8 items-center justify-center rounded-full border border-border bg-bg text-muted shadow-sm text-[0.7rem];
+    transition: background-color 0.15s ease-out, color 0.15s ease-out,
+      transform 0.15s ease-out;
+  }
+
+  .theme-toggle:hover {
+    @apply text-accent;
+    transform: translateY(-1px);
+  }
+
+  html[data-theme="dark"] .theme-toggle {
+    background-color: var(--color-surface);
+  }
+
+  /* Fancy underline link */
+  .link-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.15rem;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-accent);
+    transition: width 0.16s ease-out;
+  }
+
+  .link-underline:hover::after {
+    width: 100%;
+  }
+
+  /* Footer shell */
+  .footer-shell {
+    @apply rounded-2xl border border-border shadow-md backdrop-blur;
+    position: relative;
+    overflow: hidden;
+    background-color: color-mix(in srgb, var(--color-surface) 86%, transparent);
+  }
+
+  .footer-shell::before {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--color-accent) 80%, transparent),
+      transparent
+    );
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  .footer-inner {
+    @apply flex flex-col gap-3 px-4 py-3 text-[0.72rem] sm:flex-row sm:items-center sm:justify-between sm:px-5;
+  }
+
+  .footer-links {
+    @apply flex flex-wrap items-center gap-3;
+  }
+
+  .footer-link {
+    @apply inline-flex items-center gap-1 text-[0.75rem] font-medium text-muted transition-all duration-150 ease-out;
+  }
+
+  .footer-link:hover {
+    color: var(--color-accent);
+  }
+
+  .footer-small {
+    @apply text-[0.72rem] text-muted leading-relaxed;
+  }
+
+  .footer-float:hover {
+    color: var(--color-accent);
+    transform: translateY(-1px);
+  }
+
+  .footer-float:hover i {
+    filter: drop-shadow(
+      0 0 2px color-mix(in srgb, var(--color-accent) 60%, transparent)
+    );
+  }
+

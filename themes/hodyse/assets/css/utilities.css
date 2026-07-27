@@ -1,0 +1,95 @@
+/* ==========================================================================
+   UTILITY CLASSES
+   Color utilities, animations, helper classes
+   ========================================================================== */
+
+  .bg-bg {
+    background-color: var(--color-bg);
+  }
+  .bg-surface {
+    background-color: var(--color-surface);
+  }
+
+  .text-text {
+    color: var(--color-text);
+  }
+  .text-muted {
+    color: var(--color-text-muted);
+  }
+  .text-accent {
+    color: var(--color-accent);
+  }
+
+  .border-border {
+    border-color: var(--color-border);
+  }
+  .border-accent {
+    border-color: var(--color-accent);
+  }
+
+  .bg-accent {
+    background-color: var(--color-accent);
+  }
+  .underline-accent {
+    text-decoration-color: var(--color-accent);
+  }
+
+  /* Simple fade-up animation */
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.45s ease-out both;
+  }
+
+  @keyframes search-panel-in {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -48%) scale(0.97);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  @keyframes search-backdrop-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes search-panel-out {
+    0% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -48%) scale(0.97);
+    }
+  }
+
+  @keyframes search-backdrop-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+
+@layer components { }
+  /* Layout helpers */

@@ -1,0 +1,277 @@
+/* ==========================================================================
+   RESPONSIVE STYLES
+   Global responsive breakpoints and mobile optimizations
+   ========================================================================== */
+
+  /* Mobile - Small screens (up to 640px) */
+  @media (max-width: 640px) {
+    .card-pad {                                                                                                                                                              
+      padding: 1.25rem;                                                                                                                                                      
+    }     
+    
+    .layout-page {
+      padding-inline: 1rem;
+      padding-block: 1.5rem;
+    }
+
+    .layout-page-tight {
+      padding-inline: 1rem;
+      padding-block: 1rem;
+    }
+
+    /* Markdown body */
+    .markdown-body {
+      font-size: 0.9rem;
+      padding: 0;
+    }
+
+    /* Headings - scale down for mobile */
+    .markdown-body h1 {
+      font-size: 1.75rem;
+    }
+
+    .markdown-body h2 {
+      font-size: 1.35rem;
+      margin-top: 2rem;
+    }
+
+    .markdown-body h3 {
+      font-size: 1.15rem;
+      margin-top: 1.5rem;
+    }
+
+    .markdown-body h4 {
+      font-size: 1rem;
+    }
+
+    .markdown-body h5,
+    .markdown-body h6 {
+      font-size: 0.9rem;
+    }
+
+    /* Heading anchors - adjust for smaller screens */
+    .markdown-body .md-heading-anchor::before {
+      left: -1rem;
+      font-size: 0.85em;
+    }
+
+    /* Blockquotes */
+    .markdown-body blockquote,
+    .markdown-body .md-blockquote {
+      margin: 1.25rem 0;
+      padding: 1rem;
+      border-left-width: 3px;
+    }
+
+    .markdown-body blockquote::before,
+    .markdown-body .md-blockquote::before {
+      font-size: 2rem;
+      left: 0.5rem;
+      top: 0.25rem;
+    }
+
+    /* Alerts */
+    .markdown-body .md-alert {
+      padding: 0.85rem 1rem 0.85rem 2.5rem;
+    }
+
+    .markdown-body .md-alert::before {
+      left: 0.75rem;
+      top: 0.95rem;
+      font-size: 0.95rem;
+    }
+
+    /* Lists */
+    .markdown-body ul,
+    .markdown-body ol {
+      padding-left: 1.25rem;
+    }
+
+    /* Code blocks */
+    .markdown-body pre {
+      margin: 1rem -1rem;
+      border-radius: 0.5rem;
+    }
+
+    .markdown-body pre code {
+      font-size: 0.8rem;
+      padding: 1rem;
+    }
+
+    .mb-codeblock {
+      margin: 1.25rem -1rem;
+      border-radius: 0.5rem;
+    }
+
+    .mb-codeblock-content pre {
+      padding: 1rem;
+    }
+
+    .mb-codeblock-content pre code {
+      font-size: 0.8rem;
+    }
+
+    /* Inline code */
+    .markdown-body :not(pre) > code {
+      font-size: 0.85em;
+      padding: 0.1rem 0.35rem;
+    }
+
+    /* Tables - full bleed on mobile */
+    .markdown-body table {
+      font-size: 0.85rem;
+    }
+
+    .markdown-body th,
+    .markdown-body td {
+      padding: 0.5rem 0.65rem;
+    }
+
+    .markdown-body .table-wrap {
+      margin: 1.25rem -1rem;
+      border-radius: 0.5rem;
+    }
+
+    /* Images */
+    .markdown-body img,
+    .markdown-body .md-image {
+      margin: 1.25rem 0;
+    }
+
+    .markdown-body .md-image a {
+      border-radius: 0.5rem;
+    }
+
+    .markdown-body .md-image a::after {
+      font-size: 2rem;
+    }
+
+    .markdown-body .md-image figcaption {
+      font-size: 0.82rem;
+      padding: 0.4rem 0.75rem;
+    }
+
+    /* Page heading */
+    .heading-page {
+      font-size: 1.75rem !important;
+      line-height: 1.2;
+    }
+
+    /* Article header */
+    .article-main header {
+      padding: 0;
+    }
+
+    /* TOC on mobile */
+    .toc-wrapper {
+      border-radius: 0.75rem;
+      padding: 0.85rem;
+    }
+
+    .toc-nav {
+      font-size: 0.85rem;
+    }
+  }
+
+  /* Tablet - Medium screens (641px to 1023px) */
+  @media (min-width: 641px) and (max-width: 1023px) {
+    .article-layout {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .article-main {
+        max-width: -webkit-fill-available;
+    }
+
+    .layout-page {
+      padding-inline: 1.5rem;
+      padding-block: 2rem;
+    }
+
+    .markdown-body {
+      font-size: 0.93rem;
+    }
+
+    .markdown-body h1 {
+      font-size: 1.85rem;
+    }
+
+    .markdown-body h2 {
+      font-size: 1.4rem;
+    }
+
+    .markdown-body h3 {
+      font-size: 1.2rem;
+    }
+  }
+
+  /* Larger screens - Adjust max-widths */
+  @media (min-width: 1536px) {
+    .article-layout {
+      padding-inline: 2rem;    
+    }
+  }
+
+  /* Ultra-wide screens */
+  @media (min-width: 1920px) {
+    .markdown-body {
+      font-size: 1rem;
+    }
+  }
+
+  /* Touch device improvements */
+  @media (hover: none) and (pointer: coarse) {
+    /* Increase tap targets for touch */
+    .toc-nav a {
+      padding: 0.5rem 0.65rem;
+      margin: 0.15rem 0;
+    }
+
+    .toc-toggle {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    .mb-action-btn {
+      padding: 0.5rem 0.85rem;
+      font-size: 0.75rem;
+    }
+
+    /* Remove hover effects on touch devices */
+    .markdown-body li:hover {
+      background: none;
+    }
+
+    .card-hover:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+
+  /* Landscape mobile */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .toc-wrapper {
+      position: relative;
+      top: 0;
+    }
+
+    .layout-page {
+      padding-block: 1rem;
+    }
+  }
+
+@layer base {
+  .prose {
+    color: var(--color-text);
+  }
+
+  .prose a {
+    color: var(--color-accent);
+    text-decoration-color: var(--color-accent);
+  }
+
+  .prose strong {
+    color: var(--color-text);
+  }
+}

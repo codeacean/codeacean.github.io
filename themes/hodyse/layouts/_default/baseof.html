@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}"
+  data-cb-collapse-enabled="{{ .Site.Params.features.codeblock.collapse.enabled }}"
+  data-cb-collapse-default="{{ .Site.Params.features.codeblock.collapse.defaultState }}"
+  data-cb-collapse-lines="{{ .Site.Params.features.codeblock.collapse.autoCollapseLines }}"
+  data-cb-collapse-auto-height="{{ .Site.Params.features.codeblock.collapse.autoCollapseHeight }}"
+  data-cb-collapse-collapsed-height="{{ .Site.Params.features.codeblock.collapse.collapsedHeight }}">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body class="min-h-screen bg-bg text-text antialiased">
+    <div class="flex min-h-screen flex-col">
+      {{ partial "header.html" . }}
+
+      <main class="flex-1">
+        {{ block "main" . }}{{ end }}
+      </main>
+
+      {{ partial "footer.html" . }}
+    </div>
+    {{ partial "search-overlay.html" . }}
+    {{ partial "dock.html" . }}
+    <script src="{{ "js/main.js" | relURL }}" defer></script>
+    <script src="{{ "js/search.js" | relURL }}" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justified-gallery@3.8.2/dist/js/justifiedGallery.min.js" defer></script>
+    <script src="{{ "js/lightbox.js" | relURL }}" defer></script>
+    <script src="{{ "js/gallery.js" | relURL }}" defer></script>
+  </body>
+</html>

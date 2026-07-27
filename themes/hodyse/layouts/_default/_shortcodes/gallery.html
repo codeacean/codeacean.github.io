@@ -1,0 +1,35 @@
+{{- $images := split (.Get "images") "," -}}
+{{- $captions := split (default "" (.Get "captions")) "," -}}
+
+<div class="gallery-container" data-jg>
+  {{- if .Inner -}}
+    {{- /* If Inner content is provided, convert markdown images to lightbox-ready anchors */ -}}
+    {{- $content := .Inner -}}
+    {{- $content = replaceRE `!\[([^\]]*)\]\(([^\)]+)\)` `<a href="$2" class="glightbox" data-glightbox="description: $1"><img src="$2" alt="$1" loading="lazy"></a>` $content -}}
+    {{ $content | safeHTML }}
+  {{- else if $images -}}
+    {{- /* Otherwise, generate from images parameter */ -}}
+    {{- range $index, $image := $images -}}
+      {{- $imagePath := trim $image " " -}}
+      {{- $caption := "" -}}
+      {{- if $captions -}}
+        {{- $caption = index $captions $index | default "" | trim " " -}}
+      {{- end -}}
+      {{- if $imagePath -}}
+        <a href="{{ $imagePath | relURL }}" class="glightbox" data-glightbox="{{ if $caption }}description: {{ $caption }}{{ end }}">
+          <img src="{{ $imagePath | relURL }}" alt="{{ $caption | default $imagePath }}" loading="lazy">
+        </a>
+      {{- end -}}
+    {{- end -}}
+  {{- else -}}
+    {{- /* Fallback: try to get images from page resources */ -}}
+    {{- $resources := .Page.Resources.Match "images/*" -}}
+    {{- if $resources -}}
+      {{- range $resources -}}
+        <a href="{{ .RelPermalink }}" class="glightbox">
+          <img src="{{ .Resize "300x" }}" alt="{{ .Name }}" loading="lazy">
+        </a>
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+</div>

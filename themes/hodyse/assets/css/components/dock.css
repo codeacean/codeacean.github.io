@@ -1,0 +1,134 @@
+/* ==========================================================================
+   DOCK COMPONENT
+   Floating action dock with toggle and panel
+   ========================================================================== */
+
+@layer components {
+  .dock {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.6rem;
+    z-index: 50;
+  }
+
+  .dock-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 9999px;
+    /* border: 1px solid var(--color-border);
+    background-color: color-mix(in srgb, var(--color-surface) 92%, transparent);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55); */
+    backdrop-filter: blur(16px);
+  }
+
+  .dock-panel {
+    @apply p-1;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    max-width: 0;
+    opacity: 0;
+    transform: translateX(6px);
+    overflow: hidden;
+    transition: max-width 0.18s ease-out, opacity 0.18s ease-out,
+      transform 0.18s ease-out;
+  }
+
+  .dock--open .dock-panel {
+    max-width: 10rem;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .dock-divider {
+    width: 1px;
+    height: 1.4rem;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      color-mix(in srgb, var(--color-border) 80%, transparent),
+      transparent
+    );
+  }
+
+  .dock-action {
+    @apply flex items-center justify-center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-border);
+    background-color: color-mix(in srgb, var(--color-bg) 75%, transparent);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: background-color 0.16s ease-out, border-color 0.16s ease-out,
+      color 0.16s ease-out, transform 0.16s ease-out, box-shadow 0.16s ease-out;
+  }
+
+  .dock-action:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: translateY(-1px);
+    /* box-shadow: 0 8px 26px rgba(0, 0, 0, 0.55); */
+  }
+
+  .dock-toggle {
+    @apply flex items-center justify-center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-border);
+    background-color: color-mix(in srgb, var(--color-bg) 85%, transparent);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: background-color 0.16s ease-out, border-color 0.16s ease-out,
+      transform 0.16s ease-out, box-shadow 0.16s ease-out;
+  }
+
+  .dock-toggle:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+  }
+
+  .dock-toggle-dots {
+    position: relative;
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.16rem;
+    border-radius: 999px;
+    background-color: var(--color-text-muted);
+  }
+
+  .dock-toggle-dots::before,
+  .dock-toggle-dots::after {
+    content: "";
+    position: absolute;
+    inset-y: 0;
+    width: 0.16rem;
+    border-radius: 999px;
+    background-color: var(--color-text-muted);
+  }
+
+  .dock-toggle-dots::before {
+    left: -0.18rem;
+  }
+
+  .dock-toggle-dots::after {
+    right: -0.18rem;
+  }
+
+  .dock--open .dock-toggle-dots,
+  .dock--open .dock-toggle-dots::before,
+  .dock--open .dock-toggle-dots::after {
+    background-color: var(--color-accent);
+  }
+
+  .btn-primary-sm {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+  }
+}

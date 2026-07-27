@@ -1,0 +1,271 @@
+/* ==========================================================================
+   CARD COMPONENTS
+   Home cards, project cards, post cards, CTA cards, badges
+   ========================================================================== */
+
+  .card-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+    background-color: color-mix(in srgb, var(--color-surface) 96%, transparent);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+  }
+
+   .card-home--project {
+    position: relative;
+    overflow: hidden;
+    transition:
+      transform 0.18s ease-out,
+      box-shadow 0.18s ease-out,
+      border-color 0.18s ease-out,
+      background-color 0.18s ease-out;
+  }
+
+  .card-home--project::after {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: radial-gradient(
+      circle at 120% 50%,
+      color-mix(in srgb, var(--color-accent) 70%, transparent),
+      transparent 60%
+    );
+    opacity: 0;
+    transform: translateX(-8px);
+    transition:
+      opacity 0.22s ease-out,
+      transform 0.22s ease-out;
+    pointer-events: none;
+  }
+
+  .card-home--project:hover {
+    transform: translateY(-4px) translateX(3px);
+    border-color: color-mix(in srgb, var(--color-accent) 40%, var(--color-border));
+    box-shadow:
+      0 18px 40px rgba(0, 0, 0, 0.7),
+      16px 0 38px rgba(124, 58, 237, 0.45); /* purple-ish accent on right */
+    background-color: color-mix(in srgb, var(--color-surface) 99%, transparent);
+  }
+
+  .card-home--project:hover::after {
+    opacity: 0.22;
+    transform: translateX(0);
+  }
+
+   .card-home-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .card-home--post {
+    background-color: color-mix(in srgb, var(--color-surface) 94%, transparent);
+  }
+
+  .card-home-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .card-home-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    background-color: color-mix(in srgb, var(--color-bg) 92%, transparent);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    font-size: 0.85rem;
+  }
+
+  .card-badge {
+    margin-left: 0.25rem;
+    padding: 0.05rem 0.35rem;
+    border-radius: 999px;
+    background-color: color-mix(in srgb, var(--color-accent) 22%, transparent);
+    color: var(--color-accent);
+    font-size: 0.6rem;
+    font-weight: 600;
+  }
+
+  .card-home-footer {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: space-between;
+  }
+
+  .card-home-footer--buttons {
+    padding-top: 0.4rem;
+    border-top: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
+  }
+
+  .card-tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .card-tag-pill {
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
+    background-color: color-mix(in srgb, var(--color-bg) 92%, transparent);
+    font-size: 0.65rem;
+    color: var(--color-text-muted);
+  }
+
+  .card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    transition:
+      color 0.15s ease-out,
+      border-color 0.15s ease-out,
+      background-color 0.15s ease-out,
+      transform 0.15s ease-out;
+  }
+
+  .card-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.68rem;
+    color: var(--color-text-muted);
+    background-color: color-mix(in srgb, var(--color-bg) 92%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
+    text-decoration: none;
+    transition:
+      color 0.15s ease-out,
+      background-color 0.15s ease-out,
+      border-color 0.15s ease-out,
+      transform 0.15s ease-out,
+      box-shadow 0.15s ease-out;
+  }
+
+  .card-cta-btn:hover {
+    color: var(--color-accent);
+    background-color: color-mix(in srgb, var(--color-surface) 96%, transparent);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  }
+
+  .card-cta-repo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--color-border) 85%, transparent);
+    background-color: color-mix(in srgb, var(--color-bg) 94%, transparent);
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition:
+      color 0.15s ease-out,
+      border-color 0.15s ease-out,
+      background-color 0.15s ease-out,
+      transform 0.15s ease-out,
+      box-shadow 0.15s ease-out;
+  }
+
+  .card-cta-repo:hover {
+    color: var(--color-accent);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+    background-color: color-mix(in srgb, var(--color-surface) 96%, transparent);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
+  }
+
+
+  .card-cta:hover {
+    color: var(--color-accent);
+    border-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+    background-color: color-mix(in srgb, var(--color-surface) 94%, transparent);
+    transform: translateY(-1px);
+  }
+
+    .card-home--post {
+    position: relative;
+    overflow: hidden;
+    background-color: color-mix(in srgb, var(--color-surface) 94%, transparent);
+    border-left-width: 2px;
+    border-left-color: color-mix(in srgb, var(--color-border) 80%, transparent);
+    transition:
+      transform 0.18s ease-out,
+      box-shadow 0.18s ease-out,
+      border-color 0.18s ease-out,
+      background-color 0.18s ease-out;
+  }
+
+  .card-home--post::before {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: -20%;
+    bottom: -20%;
+    width: 10px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      color-mix(in srgb, var(--color-accent) 70%, transparent),
+      transparent
+    );
+    opacity: 0;
+    transform: translateX(-6px);
+    transition:
+      opacity 0.22s ease-out,
+      transform 0.22s ease-out;
+    pointer-events: none;
+  }
+
+  .card-home--post:hover {
+    transform: translateY(-3px);
+    background-color: color-mix(in srgb, var(--color-surface) 98%, transparent);
+    border-left-color: color-mix(in srgb, var(--color-accent) 55%, var(--color-border));
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.65);
+  }
+
+  .card-home--post:hover::before {
+    opacity: 0.55;
+    transform: translateX(0);
+  }
+
+  .card-home-icon--post {
+    background-color: color-mix(in srgb, var(--color-bg) 94%, transparent);
+  }
+
+  .card-badge--soft {
+    background-color: color-mix(in srgb, var(--color-accent) 16%, transparent);
+    color: color-mix(in srgb, var(--color-accent) 85%, white);
+  }
+
+  .card {                                                                                                                                                                  
+    border-radius: 0.75rem;                                                                                                                                                
+    transition: all 0.2s ease-out;
+  }                                                                                                                                                                        
+
+  .card-pad {                                                                                                                                                              
+    padding: 1rem;                                                                                                                                                         
+  }  
+  
+  .card:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    border-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+  }

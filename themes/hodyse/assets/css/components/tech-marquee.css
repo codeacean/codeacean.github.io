@@ -1,0 +1,111 @@
+/* ==========================================================================
+   TECH MARQUEE
+   Technology carousel/strip component
+   ========================================================================== */
+
+  .tech-carousel {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.3rem 0.1rem 0.1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .tech-carousel::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .tech-carousel::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .tech-pill {
+    scroll-snap-align: start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    background-color: color-mix(in srgb, var(--color-surface) 92%, transparent);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+    white-space: nowrap;
+  }
+
+  .badge-available {
+    @apply inline-flex items-center gap-1.5;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    background-color: var(--color-accent);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.4);
+  }
+
+  /* --- Tech marquee --- */
+  .tech-icon {
+    font-size: 1.5rem;
+  }
+
+  .tech-strip {
+    position: relative;
+    overflow: hidden;
+    padding-block: 0.4rem;
+  }
+
+   .tech-strip-track {
+    @apply py-2;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    animation-name: tech-marquee;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+  }
+
+  .tech-strip-track {
+    gap: 1.5rem;
+  }
+
+  .tech-strip--wide .tech-strip-track--primary {
+    animation-duration: 40s;
+  }
+
+  .tech-strip--wide .tech-strip-track--secondary {
+    animation-duration: 40s;
+    animation-direction: reverse;
+  }
+
+  .tech-strip--compact .tech-strip-track--primary {
+    animation-duration: 40s;
+  }
+
+  .tech-strip--compact .tech-strip-track--secondary {
+    animation-duration: 48s;
+    animation-direction: reverse;
+  }
+
+  .tech-strip--compact .tech-strip-track {
+    gap: 1.1rem;
+  }
+
+  /* pause both rows on hover */
+  .tech-strip:hover .tech-strip-track {
+    animation-play-state: paused;
+  }
+
+  .tech-strip-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    opacity: 0.88;
+    transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+  }
+
+  .tech-strip-item:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+  }

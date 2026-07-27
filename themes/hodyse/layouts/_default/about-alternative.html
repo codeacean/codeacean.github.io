@@ -1,0 +1,156 @@
+{{ define "main" }}
+  <section class="layout-page">
+    <article class="about-alt-page">
+
+      <div class="about-alt-layout">
+        <!-- Left Sidebar - Profile Card -->
+        <aside class="about-alt-sidebar">
+          <div class="about-alt-profile-card">
+            {{ with .Site.Params.hero.avatar }}
+              <div class="about-alt-avatar">
+                <img src="{{ . | relURL }}" alt="{{ $.Site.Params.brand }}" />
+              </div>
+            {{ else }}
+              <div class="about-alt-avatar-placeholder">
+                <i class="fas fa-code"></i>
+              </div>
+            {{ end }}
+
+            <h1 class="about-alt-name">{{ $.Site.Params.brand }}</h1>
+
+            {{ with .Params.subtitle }}
+              <p class="about-alt-role">{{ . }}</p>
+            {{ end }}
+
+            {{ with .Site.Params.hero.location }}
+              <div class="about-alt-meta">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>{{ . }}</span>
+              </div>
+            {{ end }}
+
+            <!-- Quick Stats -->
+            {{ with $.Site.Params.about.alt.stats }}
+              <div class="about-alt-stats">
+                {{ range . }}
+                  <div class="about-alt-stat">
+                    <div class="about-alt-stat-value">{{ .value }}</div>
+                    <div class="about-alt-stat-label">{{ .label }}</div>
+                  </div>
+                {{ end }}
+              </div>
+            {{ end }}
+
+            <!-- Social Links -->
+            {{ with .Site.Params.social }}
+              <div class="about-alt-social">
+                {{ range . }}
+                  <a
+                    href="{{ .url }}"
+                    class="about-alt-social-icon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="{{ .label }}"
+                  >
+                    <i class="{{ .icon }}"></i>
+                  </a>
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+        </aside>
+
+        <!-- Right Content Area -->
+        <div class="about-alt-content">
+          <!-- Introduction -->
+          <div class="about-alt-section">
+            <div class="markdown-body">
+              {{ $content := .Content }}
+              {{ $content = replace $content "<hr>" "|||SPLIT|||" }}
+              {{ $content = replace $content "<hr />" "|||SPLIT|||" }}
+              {{ $content = replace $content "<hr/>" "|||SPLIT|||" }}
+              {{ $parts := split $content "|||SPLIT|||" }}
+
+              {{ index $parts 0 | safeHTML }}
+            </div>
+          </div>
+
+          <!-- Experience Cards -->
+          {{ if gt (len $parts) 1 }}
+            {{- $experienceParts := slice -}}
+            {{- $additionalContent := "" -}}
+            {{- $foundNonExperience := false -}}
+
+            {{- range $index, $part := after 1 $parts -}}
+              {{- $trimmed := trim $part " \n\t" -}}
+              {{- if $trimmed -}}
+                {{- /* Check if this looks like an experience card (starts with <p><strong>) or is additional content (starts with <h) */ -}}
+                {{- if or (hasPrefix $trimmed "<p><strong>") (hasPrefix $trimmed "<p><strong ") (hasPrefix $trimmed "<p>\n<strong") (hasPrefix $trimmed "<p> <strong") -}}
+                  {{- if not $foundNonExperience -}}
+                    {{- $experienceParts = $experienceParts | append $part -}}
+                  {{- else -}}
+                    {{- $additionalContent = printf "%s|||SPLIT|||%s" $additionalContent $part -}}
+                  {{- end -}}
+                {{- else -}}
+                  {{- $foundNonExperience = true -}}
+                  {{- $additionalContent = printf "%s|||SPLIT|||%s" $additionalContent $part -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+
+            {{- if gt (len $experienceParts) 0 -}}
+              <div class="about-alt-section">
+                <h2 class="about-alt-section-title">
+                  <i class="fas fa-briefcase"></i>
+                  <span>Experience</span>
+                </h2>
+
+                <div class="about-alt-experience-grid">
+                  {{- range $experienceParts -}}
+                    <div class="about-alt-experience-card">
+                      {{ . | safeHTML }}
+                    </div>
+                  {{- end -}}
+                </div>
+              </div>
+            {{- end -}}
+
+            {{- /* Render additional content sections */ -}}
+            {{- if $additionalContent -}}
+              {{- $additionalParts := split $additionalContent "|||SPLIT|||" -}}
+              {{- range $additionalParts -}}
+                {{- $trimmed := trim . " \n\t" -}}
+                {{- if $trimmed -}}
+                  <div class="about-alt-section">
+                    <div class="markdown-body">
+                      {{ . | safeHTML }}
+                    </div>
+                  </div>
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+          {{ end }}
+
+          <!-- Skills Badge Cloud -->
+          {{ with $.Site.Params.about.alt.skills }}
+            <div class="about-alt-section">
+              <h2 class="about-alt-section-title">
+                <i class="fas fa-code"></i>
+                <span>Tech Stack</span>
+              </h2>
+              <div class="about-alt-skills">
+                {{ range . }}
+                  <span class="about-alt-skill">
+                    {{ with .icon }}<i class="{{ . }}"></i>{{ end }}
+                    {{ .label }}
+                  </span>
+                {{ end }}
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+
+    </article>
+  </section>
+{{ end }}

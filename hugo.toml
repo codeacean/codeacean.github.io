@@ -1,0 +1,220 @@
+baseURL = 'https://elrisai.xyz'
+languageCode = 'en-us'
+title = 'elrisai.xyz'
+theme = "hodyse"
+
+# Enable search index generation and web app manifest
+[outputs]
+  home = ["HTML", "RSS", "JSON", "WebAppManifest"]
+
+[outputFormats.WebAppManifest]
+  mediaType = "application/manifest+json"
+  rel = "manifest"
+  baseName = "manifest"
+  isPlainText = true
+  notAlternative = true
+
+[params]
+  brand = "Elrisai"
+  description = ""
+  favicon = "fav.png"
+  appleTouchIcon = "apple-touch-icon.png"
+  logo = "fav.png"
+
+  # Project and blog intro text
+  projectsIntro = "Selected projects to display list." # Can be empty
+  blogIntro = "" # Can be empty
+
+  # Web App Manifest Configuration (PWA support)
+  [params.manifest]
+    themeColor = "#3855f7"
+    backgroundColor = "#000000"
+    categories = ["blog",]
+
+  # Theme Configuration
+  [params.theme]
+    defaultTheme = "system"  # Options: "light", "dark", "system"
+
+  # Home Page Configuration
+  [params.home]
+    sections = ["hero", "now"] # posts, projects, tech-marquee, now,
+    showNowSection = true
+    showFeaturedProjects = true
+    showLatestPosts = true
+    featuredProjectsLimit = 3
+    latestPostsLimit = 3
+    projectsTitle = "Selected Work"
+    projectsSubtitle = ""
+    blogTitle = "Latest Writing"
+    blogSubtitle = ""
+    techMarqueeLabel = "Experienced In"
+
+  # Hero Section Configuration
+  [params.hero]
+    # badge = "Software Engineer"
+    title = "elyrisai.xyz"
+    role = "Hi, I’m Elyrisai. 18.04976376 years old, Homo sapiens with XY chromosomes."
+    summary = ""
+    avatar = "avatar.jpg"  # Optional: 400x400px recommended
+    location = ""
+    focus = "Currently studying Math and Programming."
+    available = false
+    availableLabel = "Available for work"
+
+    nowLabel = "Quick Facts"
+    nowIntro = "Right now I'm mainly:"
+    now = [
+      "Learning C++",
+      "Understanding Mathematics on my own",
+      "Studing for academic final exam"
+    ]
+
+    # [params.hero.primary]
+    #   label = "View Projects"
+    #   href = "/projects/"
+
+    # [params.hero.secondary]
+    #   label = "Read the Blog"
+    #   href = "/blog/"
+
+  # Icon Libraries
+  [params.icons]
+    useFontAwesome = true
+    useDevicon = true
+
+  # Social Links
+  [[params.social]]
+    label = "GitLab"
+    url = "https://github.com/elyrisai"
+    icon = "fa-brands fa-github"
+
+  [[params.social]]
+    label = "X/Twitter"
+    url = "https://www.x.com/elrisai/"
+    icon = "fa-brands fa-twitter"
+
+  [[params.social]]
+    label = "Email"
+    url = "mailto:elyrisai@proton.me"
+    icon = "fa-regular fa-envelope"
+
+  # Analytics Configuration
+  [params.analytics]
+    # Google Analytics (GA4)
+    # googleAnalytics = "G-XXXXXXXXXX"
+
+    # Plausible Analytics (privacy-friendly)
+    # [params.analytics.plausible]
+    #   enabled = true
+    #   domain = "yourdomain.com"
+    #   scriptUrl = "https://plausible.io/js/script.js"
+
+    # Umami Analytics (self-hosted option)
+    # [params.analytics.umami]
+    #   enabled = true
+    #   scriptUrl = "https://analytics.yourdomain.com/script.js"
+    #   websiteId = "your-website-id"
+
+    # Fathom Analytics
+    # [params.analytics.fathom]
+    #   enabled = true
+    #   scriptUrl = "https://cdn.usefathom.com/script.js"
+    #   siteId = "YOUR-SITE-ID"
+
+# Navigation Menu
+[menu]
+  [[menu.main]]
+    name = "home"
+    pageRef = "/"
+    url = "/"
+    weight = 1
+    identifier = "home"
+    [menu.main.params]
+      icon = "fa-solid fa-house"
+
+  [[menu.main]]
+    name = "about"
+    pageRef = "about"
+    url = "content/"
+    weight = 4
+    identifier = "about"
+    [menu.main.params]
+      icon = "fa-regular fa-user"
+
+  # [[menu.main]]
+  #   name = "About Alt"
+  #   pageRef = "about-alternative"
+  #   url = "/about-alternative/"
+  #   weight = 2
+  #   identifier = "about-alternative"
+  #   [menu.main.params]
+      # icon = "fa-solid fa-user"
+
+  [[menu.main]]
+    name = "projects"
+    pageRef = "projects"
+    url = "content/projects/"
+    weight = 3
+    identifier = "projects"
+    [menu.main.params]
+      icon = "fa-regular fa-folder-open"
+
+  [[menu.main]]
+    name = "blog"
+    pageRef = "blog"
+    url = "/content/blog/"
+    weight = 2
+    identifier = "blog"
+    [menu.main.params]
+      icon = "fa-regular fa-note-sticky"
+
+# Markup Configuration
+[markup]
+  # Table of Contents
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+
+  # Goldmark Renderer (Markdown)
+  [markup.goldmark.renderer]
+    unsafe = true
+
+  [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
+
+  [markup.goldmark.extensions]
+    typographer = true
+    linkify = true
+    table = true
+    strikethrough = true
+    taskList = true
+    definitionList = true
+    footnote = true
+
+    [markup.goldmark.extensions.extras.delete]
+      enable = true
+    [markup.goldmark.extensions.extras.insert]
+      enable = true
+    [markup.goldmark.extensions.extras.mark]
+      enable = true
+
+  # Syntax Highlighting
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = false
+    style = "monokai"
+    tabWidth = 2
+
+# Taxonomies
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# Privacy Configuration
+[privacy]
+  [privacy.youtube]
+    privacyEnhanced = true

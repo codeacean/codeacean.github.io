@@ -1,0 +1,211 @@
+/* ==========================================================================
+   TABLE OF CONTENTS
+   TOC sidebar, active link tracking, responsive behavior
+   ========================================================================== */
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    position: relative;
+    min-width: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .article-layout {
+      grid-template-columns: 260px 1fr;
+      gap: 3rem;
+    }
+
+    .article-toc {
+      order: 1;
+    }
+
+    .article-main {
+      order: 2;
+    }
+  }
+
+  .article-main {
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  .article-toc {
+    width: 100%;
+  }
+
+  .toc-wrapper {
+    position: sticky;
+    top: 2rem;
+    background: color-mix(in srgb, var(--color-surface) 50%, transparent);
+    border: 1px solid var(--color-border);
+    border-radius: 0.85rem;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    transition: all 0.2s ease-out;
+    max-height: calc(100vh - 24rem);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .toc-wrapper:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    border-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+  }
+
+  .toc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+  }
+
+  .toc-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 650;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .toc-title i {
+    color: var(--color-accent);
+    font-size: 0.75rem;
+  }
+
+  .toc-toggle {
+    display: flex;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: all 0.15s ease-out;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .toc-toggle:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  }
+
+  .toc-toggle i {
+    font-size: 0.7rem;
+    transition: transform 0.2s ease-out;
+  }
+
+  .toc-wrapper.collapsed .toc-toggle i {
+    transform: rotate(-90deg);
+  }
+
+  .toc-wrapper.collapsed .toc-nav {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  @media (max-width: 1023px) {
+    .toc-wrapper {
+      position: relative;
+      top: 0;
+    }
+  }
+
+  .toc-nav {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    transition: all 0.3s ease-out;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+    min-height: 0;
+  }
+
+  /* Custom scrollbar for TOC */
+  .toc-nav::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .toc-nav::-webkit-scrollbar-track {
+    background: color-mix(in srgb, var(--color-bg) 30%, transparent);
+    border-radius: 3px;
+  }
+
+  .toc-nav::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--color-border) 70%, transparent);
+    border-radius: 3px;
+  }
+
+  .toc-nav::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+  }
+
+  .toc-nav > ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .toc-nav ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  .toc-nav ul ul {
+    padding-left: 1rem;
+    margin-top: 0.25rem;
+    border-left: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  }
+
+  .toc-nav li {
+    margin: 0.35rem 0;
+    padding-left: 0;
+  }
+
+  .toc-nav li:hover {
+    background: none;
+  }
+
+  .toc-nav a {
+    display: block;
+    padding: 0.35rem 0.5rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    border-radius: 0.35rem;
+    transition: all 0.15s ease-out;
+    border-bottom: none;
+  }
+
+  .toc-nav a:hover {
+    color: var(--color-text);
+    background: color-mix(in srgb, var(--color-surface) 40%, transparent);
+    border-left-color: var(--color-accent);
+    transform: translateX(3px);
+  }
+
+  .toc-nav a.active {
+    color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+    border-left-color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  /* Mobile: TOC appears at top */
+  @media (max-width: 1023px) {
+    .article-toc {
+      order: -1;
+      margin-bottom: 1.5rem;
+    }
+  }

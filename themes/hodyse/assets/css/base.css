@@ -1,0 +1,35 @@
+/* ==========================================================================
+   BASE STYLES
+   Tailwind imports, CSS variables, theme colors, and base styles
+   ========================================================================== */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme Variables */
+:root {
+  /* LIGHT THEME */
+  --color-bg: #f9fafb;
+  --color-surface: #ffffff;
+  --color-text: #111827;
+  --color-text-muted: #6b7280;
+  --color-border: #e5e7eb;
+  --color-accent: #a855f7;
+}
+
+html[data-theme="dark"] {
+  /* DARK THEME */
+  --color-bg: #000000; /* TRUE BLACK */
+  --color-surface: #0a0a0a;
+  --color-text: #f9fafb;
+  --color-text-muted: #9ca3af;
+  --color-border: #27272a;
+  --color-accent: #c084fc;
+}
+
+/* Base Styles */
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+}

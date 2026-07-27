@@ -1,0 +1,4 @@
+{{- $type := .Get "type" | default "note" -}}
+<div class="md-alert md-alert-{{ $type }}">
+  {{ .Inner | markdownify }}
+</div>

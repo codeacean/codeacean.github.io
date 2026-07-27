@@ -1,0 +1,50 @@
+<footer class="pb-6 pt-10">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="footer-shell">
+      <div class="footer-inner">
+        <!-- Left -->
+        <div class="space-y-1">
+          <p class="footer-small">
+            &copy; {{ now.Format "2006" }} {{ .Site.Title }}
+          </p>
+        </div>
+
+        <div style="display: flex; gap: 2px; align-items: center; margin-top: 0rem; font-size: 0.90rem;">
+          <a href="https://nixwebr.ing/prev/elyrisai" style="font-size: 0.9rem; line-height: 0; padding: 1px;">&#8592;</a>
+          <a href="https://nixwebr.ing" d="" style="font-size: 0.85rem; line-height: 0;">
+            <svg class="hex-icon" width="22" height="20" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50,2 L93,26 L73,50 L50,15 Z" fill="#5b8fc9"/>
+              <path d="M93,26 L93,74 L65,62 L73,50 Z" fill="#7ab3d8"/>
+              <path d="M93,74 L50,98 L50,78 L65,62 Z" fill="#5b8fc9"/>
+              <path d="M50,98 L7,74 L27,62 L50,78 Z" fill="#7ab3d8"/>
+              <path d="M7,74 L7,26 L35,38 L27,62 Z" fill="#5b8fc9"/>
+              <path d="M7,26 L50,2 L50,22 L35,38 Z" fill="#7ab3d8"/>
+              <polygon points="50,22 73,36 73,64 50,78 27,64 27,36" fill="#16161c"/>
+              <line x1="50" y1="2"  x2="73" y2="50" stroke="#16161c" stroke-width="2.5"/>
+              <line x1="93" y1="26" x2="27" y2="62" stroke="#16161c" stroke-width="2.5"/>
+              <line x1="93" y1="74" x2="7"  y2="38" stroke="#16161c" stroke-width="2.5"/>
+            </svg>
+          </a>
+          <a href="https://nixwebr.ing/next/elyrisai" style="font-size: 0.9rem; line-height: 0; padding: 1px;">&#8594;</a>
+        </div>
+
+        <!-- Right -->
+        {{ with .Site.Params.social }}
+        <div class="footer-links">
+          {{ range . }}
+          <a
+            href="{{ .url }}"
+            class="footer-link footer-float link-underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="{{ .icon }} text-[0.8rem]"></i>
+            <span>{{ .label }}</span>
+          </a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</footer>

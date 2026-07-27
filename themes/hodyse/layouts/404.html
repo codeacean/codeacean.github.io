@@ -1,0 +1,308 @@
+{{ define "main" }}
+  <section class="layout-page">
+    <div class="error-page">
+      <div class="error-content">
+        <!-- Error Code -->
+        <div class="error-code">404</div>
+
+        <!-- Error Message -->
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-description">
+          The page you're looking for doesn't exist or has been moved.
+        </p>
+
+        <!-- Search Suggestion -->
+        <div class="error-search">
+          <p class="error-hint">
+            Try searching for what you need, or return to the homepage.
+          </p>
+          <div class="error-actions">
+            <button
+              onclick="window.MinimalSearch.open()"
+              class="btn-primary"
+              aria-label="Search site"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span>Search Site</span>
+            </button>
+            <a href="/" class="btn-ghost">
+              <i class="fa-solid fa-house"></i>
+              <span>Go Home</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Helpful Links -->
+        <div class="error-links">
+          <h2 class="error-links-title">You might be interested in:</h2>
+          <div class="error-links-grid">
+            {{ with .Site.GetPage "/blog" }}
+              <a href="{{ .Permalink }}" class="error-link-card">
+                <i class="fa-regular fa-note-sticky"></i>
+                <div>
+                  <strong>Blog</strong>
+                  <span>Read latest articles</span>
+                </div>
+              </a>
+            {{ end }}
+
+            {{ with .Site.GetPage "/projects" }}
+              <a href="{{ .Permalink }}" class="error-link-card">
+                <i class="fa-regular fa-folder-open"></i>
+                <div>
+                  <strong>Projects</strong>
+                  <span>Explore my work</span>
+                </div>
+              </a>
+            {{ end }}
+
+            {{ with .Site.GetPage "/about" }}
+              <a href="{{ .Permalink }}" class="error-link-card">
+                <i class="fa-regular fa-user"></i>
+                <div>
+                  <strong>About</strong>
+                  <span>Learn more about me</span>
+                </div>
+              </a>
+            {{ end }}
+          </div>
+        </div>
+
+        <!-- Alternative: Show Recent Posts -->
+        {{ $recentPages := where .Site.RegularPages "Section" "in" (slice "blog" "projects") }}
+        {{ $recentPages = first 3 $recentPages }}
+        {{ if $recentPages }}
+          <div class="error-recent">
+            <h2 class="error-recent-title">Recent Content</h2>
+            <ul class="error-recent-list">
+              {{ range $recentPages }}
+                <li>
+                  <a href="{{ .Permalink }}" class="error-recent-link">
+                    <span class="error-recent-icon">
+                      {{ if eq .Section "blog" }}
+                        <i class="fa-regular fa-note-sticky"></i>
+                      {{ else if eq .Section "projects" }}
+                        <i class="fa-regular fa-folder-open"></i>
+                      {{ else }}
+                        <i class="fa-regular fa-file"></i>
+                      {{ end }}
+                    </span>
+                    <span class="error-recent-text">
+                      <strong>{{ .Title }}</strong>
+                      {{ with .Description }}
+                        <small>{{ . }}</small>
+                      {{ end }}
+                    </span>
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .error-page {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 0;
+    }
+
+    .error-content {
+      text-align: center;
+      max-width: 42rem;
+      margin: 0 auto;
+    }
+
+    .error-code {
+      font-size: 8rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    .error-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 1rem;
+    }
+
+    .error-description {
+      font-size: 1.125rem;
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .error-search {
+      margin-bottom: 3rem;
+    }
+
+    .error-hint {
+      color: var(--color-text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .error-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .error-links {
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .error-links-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 1.5rem;
+    }
+
+    .error-links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .error-link-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 0.75rem;
+      text-decoration: none;
+      color: var(--color-text);
+      transition: all 0.2s ease;
+    }
+
+    .error-link-card:hover {
+      border-color: var(--color-accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .error-link-card i {
+      font-size: 1.5rem;
+      color: var(--color-accent);
+    }
+
+    .error-link-card strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .error-link-card span {
+      display: block;
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+    }
+
+    .error-recent {
+      margin-top: 2rem;
+    }
+
+    .error-recent-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    .error-recent-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .error-recent-list li {
+      margin-bottom: 0.75rem;
+    }
+
+    .error-recent-link {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 0.5rem;
+      text-decoration: none;
+      color: var(--color-text);
+      transition: all 0.2s ease;
+    }
+
+    .error-recent-link:hover {
+      border-color: var(--color-accent);
+      background: color-mix(in srgb, var(--color-surface) 95%, var(--color-accent));
+    }
+
+    .error-recent-icon {
+      flex-shrink: 0;
+      color: var(--color-accent);
+      font-size: 1.25rem;
+      padding-top: 0.25rem;
+    }
+
+    .error-recent-text {
+      flex: 1;
+      text-align: left;
+    }
+
+    .error-recent-text strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .error-recent-text small {
+      display: block;
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      line-height: 1.4;
+    }
+
+    @media (max-width: 640px) {
+      .error-code {
+        font-size: 5rem;
+      }
+
+      .error-title {
+        font-size: 1.5rem;
+      }
+
+      .error-description {
+        font-size: 1rem;
+      }
+
+      .error-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .error-actions .btn-primary,
+      .error-actions .btn-ghost {
+        width: 100%;
+      }
+
+      .error-links-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+{{ end }}

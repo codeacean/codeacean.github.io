@@ -1,0 +1,17 @@
+{{- $pages := slice -}}
+
+{{- range .Site.RegularPages -}}
+  {{- $summary := .Summary -}}
+  {{- if not $summary -}}
+    {{- $summary = .Description -}}
+  {{- end -}}
+
+  {{- $pages = $pages | append (dict
+    "title"     .Title
+    "permalink" .Permalink
+    "section"   .Section
+    "summary"   (plainify $summary)
+  ) -}}
+{{- end -}}
+
+{{- dict "pages" $pages | jsonify -}}

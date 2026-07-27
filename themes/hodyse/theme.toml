@@ -1,0 +1,29 @@
+name = "Minimal Black"
+license = "MIT"
+licenselink = "https://gitlab.com/jimchr12/hugo-minimal-black/blob/main/LICENSE"
+description = "A minimal, dark-mode first Hugo theme with true black backgrounds, purple accents, and comprehensive content styling. Features responsive design, search, TOC, and multiple page layouts."
+homepage = "https://gitlab.com/jimchr12/hugo-minimal-black"
+demosite = "https://minimal-black-demo.netlify.app"
+tags = ["blog", "portfolio", "minimal", "dark", "tailwind", "responsive", "clean", "modern", "personal"]
+features = [
+  "Dark Mode",
+  "Light Mode",
+  "Responsive Design",
+  "Search",
+  "Table of Contents",
+  "Syntax Highlighting",
+  "Google Analytics",
+  "Font Awesome Icons",
+  "Devicon Support",
+  "Multiple About Page Layouts",
+  "Project Portfolio",
+  "Blog",
+  "Gallery Shortcode",
+  "Mermaid Diagrams",
+  "GitHub Flavored Markdown"
+]
+min_version = "0.120.0"
+
+[author]
+  name = "Jim Christopoulos"
+  homepage = "https://jimchristopoulos.com/"

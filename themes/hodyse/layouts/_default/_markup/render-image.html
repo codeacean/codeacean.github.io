@@ -1,0 +1,12 @@
+<figure class="md-image">
+  <a href="{{ .Destination | safeURL }}" class="glightbox">
+    <img
+      src="{{ .Destination | safeURL }}"
+      alt="{{ .Text }}"
+      loading="lazy"
+    />
+  </a>
+  {{ with .Title }}
+    <figcaption>{{ . }}</figcaption>
+  {{ end }}
+</figure>
