@@ -51,9 +51,8 @@ theme = "hodyse"
 
   # Hero Section Configuration
   [params.hero]
-    # badge = "Software Engineer"
     title = "elyrisai.xyz"
-    role = "Hi, I’m Elyrisai. 18.04976376 years old, Homo sapiens with XY chromosomes."
+    role = "Hi, I’m Elyrisai. Homo sapiens with XY chromosomes."
     summary = ""
     avatar = "avatar.jpg"  # Optional: 400x400px recommended
     location = ""
@@ -61,12 +60,11 @@ theme = "hodyse"
     available = false
     availableLabel = "Available for work"
 
-    nowLabel = "Quick Facts"
-    nowIntro = "Right now I'm mainly:"
+    nowLabel = "Status"
+    nowIntro = "Right now I'm:"
     now = [
       "Learning C++",
-      "Understanding Mathematics on my own",
-      "Studing for academic final exam"
+      "Understanding Mathematics",
     ]
 
     # [params.hero.primary]
@@ -84,12 +82,12 @@ theme = "hodyse"
 
   # Social Links
   [[params.social]]
-    label = "GitLab"
+    label = "GitHub"
     url = "https://github.com/elyrisai"
     icon = "fa-brands fa-github"
 
   [[params.social]]
-    label = "X/Twitter"
+    label = "X"
     url = "https://www.x.com/elrisai/"
     icon = "fa-brands fa-twitter"
 

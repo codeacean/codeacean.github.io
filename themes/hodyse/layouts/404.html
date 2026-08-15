@@ -6,15 +6,15 @@
         <div class="error-code">404</div>
 
         <!-- Error Message -->
-        <h1 class="error-title">Page Not Found</h1>
+        <h1 class="error-title">derivation does not exist</h1>
         <p class="error-description">
-          The page you're looking for doesn't exist or has been moved.
+          error: hash mismatch in file downloaded from 'https://elyrisai.xyz' specified: sha256-0000000000...0000000000 got: sha256-404404404...4044044044        
         </p>
 
         <!-- Search Suggestion -->
         <div class="error-search">
           <p class="error-hint">
-            Try searching for what you need, or return to the homepage.
+          <i>there are others sites to go, you know </i>
           </p>
           <div class="error-actions">
             <button
@@ -41,7 +41,7 @@
                 <i class="fa-regular fa-note-sticky"></i>
                 <div>
                   <strong>Blog</strong>
-                  <span>Read latest articles</span>
+                  <span>Read latest blog</span>
                 </div>
               </a>
             {{ end }}
@@ -60,8 +60,8 @@
               <a href="{{ .Permalink }}" class="error-link-card">
                 <i class="fa-regular fa-user"></i>
                 <div>
-                  <strong>About</strong>
-                  <span>Learn more about me</span>
+                  <strong>about</strong>
+                  <span>see about me</span>
                 </div>
               </a>
             {{ end }}
@@ -135,6 +135,9 @@
     }
 
     .error-description {
+      font-family: "Code", sans-serif;
+      font-family: "ComicShanns Nerd Font";
+  src: url("../assets/ComicShannsMonoNerdFontMono-Regular.otf") format("otf");
       font-size: 1.125rem;
       color: var(--color-text-muted);
       margin-bottom: 2rem;
